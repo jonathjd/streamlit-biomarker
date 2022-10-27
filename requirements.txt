@@ -3,12 +3,15 @@ attrs==22.1.0
 backports.zoneinfo==0.2.1
 blinker==1.5
 cachetools==5.2.0
+certifi @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_4d2o0arbv6/croot/certifi_1665076671099/work/certifi
 charset-normalizer==2.1.1
 click==8.1.3
 commonmark==0.9.1
+cycler @ file:///tmp/build/80754af9/cycler_1637851556182/work
 decorator==5.1.1
 entrypoints==0.4
 et-xmlfile==1.1.0
+fonttools==4.25.0
 gitdb==4.0.9
 GitPython==3.1.29
 idna==3.4
@@ -16,10 +19,13 @@ importlib-metadata==5.0.0
 importlib-resources==5.10.0
 Jinja2==3.1.2
 jsonschema==4.16.0
+kiwisolver @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_69de275f-e01d-4033-8ea6-9caf70c31072d5uirqak/croots/recipe/kiwisolver_1653292042660/work
 MarkupSafe==2.1.1
+matplotlib @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_5fi9l6u9e6/croots/recipe/matplotlib-suite_1660167931049/work
+munkres==1.1.4
 numpy==1.23.4
 openpyxl==3.0.10
-packaging==21.3
+packaging @ file:///tmp/build/80754af9/packaging_1637314298585/work
 pandas==1.5.1
 Pillow==9.2.0
 pkgutil_resolve_name==1.3.10
@@ -28,20 +34,20 @@ pyarrow==9.0.0
 pydeck==0.8.0b4
 Pygments==2.13.0
 Pympler==1.0.1
-pyparsing==3.0.9
+pyparsing @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_3b_3vxnd07/croots/recipe/pyparsing_1661452540919/work
 pyrsistent==0.18.1
-python-dateutil==2.8.2
+python-dateutil @ file:///tmp/build/80754af9/python-dateutil_1626374649649/work
 pytz==2022.5
 pytz-deprecation-shim==0.1.0.post0
 requests==2.28.1
 rich==12.6.0
 semver==2.13.0
-six==1.16.0
+six @ file:///tmp/build/80754af9/six_1644875935023/work
 smmap==5.0.0
 streamlit==1.13.0
 toml==0.10.2
 toolz==0.12.0
-tornado==6.2
+tornado @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_a61b4xoie9/croots/recipe/tornado_1662061692951/work
 typing_extensions==4.4.0
 tzdata==2022.5
 tzlocal==4.2

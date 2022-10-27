@@ -5,7 +5,6 @@ blinker==1.5
 cachetools==5.2.0
 click==8.1.3
 commonmark==0.9.1
-cycler @ file:///tmp/build/80754af9/cycler_1637851556182/work
 decorator==5.1.1
 entrypoints==0.4
 et-xmlfile==1.1.0
@@ -17,7 +16,6 @@ importlib-metadata==5.0.0
 importlib-resources==5.10.0
 Jinja2==3.1.2
 jsonschema==4.16.0
-kiwisolver @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_69de275f-e01d-4033-8ea6-9caf70c31072d5uirqak/croots/recipe/kiwisolver_1653292042660/work
 MarkupSafe==2.1.1
 matplotlib @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_5fi9l6u9e6/croots/recipe/matplotlib-suite_1660167931049/work
 munkres==1.1.4

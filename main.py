@@ -1,8 +1,8 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
+import matplotlib_venn as vplt
 import numpy as np
-
 
 st.set_page_config(page_title='Pathway Analysis', layout='wide')
 with open('style.css') as f:
@@ -15,7 +15,6 @@ with st.sidebar:
         st.success("List uploaded successfully!")
     else:
         st.info('Upload a list of biomarkers!', icon="ℹ️")
-
 
 #--Logic--
 marker_list = target_markers.split(':')
@@ -44,22 +43,15 @@ display_df.rename(columns={'uniprotid': 'UniProtID', 'protein_desc': 'Present in
 display_df['Present in Menu (Y/N)'].loc[~display_df['Present in Menu (Y/N)'].isnull()] = 'Y'
 display_df['Present in Menu (Y/N)'].loc[display_df['Present in Menu (Y/N)'].isnull()] = 'N'
 
-#---figs---
+# --Venn Diagram -- 
 targets_len, menu_len, overlap_len = len(targets_df), len(menu), len(overlap)
-performance = [targets_len, menu_len, overlap_len]
-objects = ['Target Biomarkers', 'SomaLogic Menu', 'Overlap With Menu']
-
-y_pos = np.arange(len(objects))
-fig = plt.figure(figsize=(6,5))
-plt.bar(
-    y_pos, 
-    performance, 
-    align='center', 
-    alpha=0.6,
-    color='#4067E2'
-    )
-plt.xticks(y_pos, objects)
-plt.ylabel('Number of Proteins')
+fig, ax = plt.subplots()
+vplt.venn2(
+    subsets=(targets_len, menu_len, overlap_len), 
+    set_labels=("Target Biomarkers", "SomaScan Menu", "Overlap"),
+    set_colors=('#4067E2','#DB40EF'),
+    ax=ax)
+vplt.venn2_circles(subsets=(targets_len, menu_len, overlap_len))
 
 #-- Display figs --
 if target_markers:
@@ -71,8 +63,6 @@ if target_markers:
     col3.metric("SomaScan Coverage", f"{perc} %")
     st.dataframe(display_df, use_container_width=True)
     st.pyplot(fig)
-
-
 
 
 with st.sidebar:
@@ -92,8 +82,3 @@ with st.sidebar:
         st.success('Biomarkers successfully downloaded!')
     if len(overlap) == 0 and dl_csv == True:
         st.error('Whoops! You downloaded an empty list', icon="🚨")
-    
-
-
-
-

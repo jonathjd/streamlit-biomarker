@@ -4,7 +4,12 @@ import matplotlib.pyplot as plt
 import matplotlib_venn as vplt
 import numpy as np
 
-st.set_page_config(page_title='Pathway Analysis', layout='wide')
+st.set_page_config(
+    page_title='Pathway Analysis', 
+    layout='centered', 
+    initial_sidebar_state='expanded'
+    )
+
 with open('style.css') as f:
     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
@@ -57,8 +62,9 @@ vplt.venn2_circles(subsets=(targets_len, menu_len, overlap_len))
 if target_markers:
     st.markdown('## Pathway Metrics')
     col1, col2, col3 = st.columns(3)
+    st.snow()
     col1.metric("Total Biomarkers", targets_len)
-    col2.metric("Overlapping Markers", overlap_len)
+    col2.metric("Overlap", overlap_len)
     perc = round((overlap_len / targets_len) * 100)
     col3.metric("SomaScan Coverage", f"{perc} %")
     st.dataframe(display_df, use_container_width=True)

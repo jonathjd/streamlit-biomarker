@@ -4,3 +4,6 @@ config.py
 .venv
 .vscode
 __pycache__/
+amphora.py
+.env
+database.py

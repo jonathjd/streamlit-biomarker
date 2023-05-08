@@ -7,7 +7,7 @@ def load_lottie_file(path: str):
         return json.load()
 
 
-def load_lottie_url(url: str):
+def load_lottie_url(url: str) -> object:
     r = requests.get(url)
     if r.status_code != 200:
         return None

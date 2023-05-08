@@ -4,7 +4,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib_venn as vplt
 import numpy as np
-import lottie_animation as la
+import modules.lottie_animation as la
 
 st.set_page_config(
     page_title="Pathway Analysis", layout="centered", initial_sidebar_state="expanded"
@@ -44,7 +44,7 @@ targets_df = pd.DataFrame(
 targets_df.drop_duplicates(subset=["uniprotid"], keep=False, inplace=True)
 
 # -- DataFrames --
-menu = pd.read_excel("excel_input/soma_menu-st.xlsx")
+menu = pd.read_excel("static/excel_input/soma_menu-st.xlsx")
 overlap = targets_df.merge(menu, on="uniprotid")
 overlap.rename(
     columns={"uniprotid": "UniProtID", "protein_desc": "Protein Description"},

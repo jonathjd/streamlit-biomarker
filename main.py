@@ -4,7 +4,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib_venn as vplt
 import modules.lottie_animation as la
-import modules.gene_ontology as gene_ontology
 
 st.set_page_config(
     page_title="Pathway Analysis", layout="centered", initial_sidebar_state="expanded"
@@ -21,16 +20,25 @@ def convert_df(df):
 
 with st.sidebar:
     st.title("GSDE Pathway Analysis Tool")
-    target_markers = st.text_input("Enter Gene Ontology ID.")
+    target_markers = st.text_input("Enter List of Biomarkers")
     if target_markers:
         st.success("List uploaded successfully!")
     else:
         st.info("Upload a list of biomarkers!", icon="ℹ️")
 
-if len(target_markers) == 10:
+if target_markers:
     # --Logic--
-    targets = gene_ontology.get_ontology_biomarkers(go_id=target_markers)
-    targets_df = pd.DataFrame(targets)
+    marker_list = target_markers.split(":")
+    uniprotid = []
+    prot_desc = []
+    for i in range(len(marker_list)):
+        if marker_list[i] == "UniProtKB":
+            continue
+        uniprotid.append(marker_list[i][0:6])
+        prot_desc.append(marker_list[i][7:-10])
+    targets_df = pd.DataFrame(
+        list(zip(uniprotid, prot_desc)), columns=["UniProtId", "Protein Name"]
+    )
     targets_df.drop_duplicates(subset=["UniProtId"], keep=False, inplace=True)
 
     # -- DataFrames --
@@ -53,11 +61,11 @@ if len(target_markers) == 10:
     st.markdown("## Pathway Metrics")
     col1, col2, col3 = st.columns(3)
     st.snow()
-
     col1.metric("Total Biomarkers", targets_len)
     col2.metric("Overlap", overlap_len)
     perc = round((overlap_len / targets_len) * 100)
     col3.metric("SomaScan Coverage", f"{perc} %")
+    st.markdown("## Overlapping Biomarkers")
     st.dataframe(overlap, use_container_width=True)
     st.pyplot(fig)
 

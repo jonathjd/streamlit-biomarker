@@ -1,5 +1,4 @@
 import requests
-import time
 
 URL = "http://api.geneontology.org/api/bioentity/function/"
 
@@ -31,7 +30,10 @@ def get_ontology_biomarkers(go_id: str) -> dict:
 
     params = {
         "start": 0,
-        "rows": 10000,
+        "rows": 13000,
+        "unselect_evidence": True,
+        "exclude_automatic_assertions": True,
+        "taxon": "NCBITaxon:9606",
     }
 
     while True:
@@ -68,7 +70,3 @@ def get_ontology_biomarkers(go_id: str) -> dict:
         params["start"] += params["rows"]
 
     return biomarkers
-
-
-biomarkers = get_ontology_biomarkers(go_id="GO:0008152")
-print(biomarkers)

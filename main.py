@@ -1,5 +1,6 @@
 import streamlit as st
-from streamlit_lottie import st_lottie
+
+# from streamlit_lottie import st_lottie
 import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib_venn as vplt
@@ -81,17 +82,18 @@ if target_markers:
         )
 
 else:
-    lottie_hello = la.load_lottie_url(
-        "https://assets10.lottiefiles.com/packages/lf20_8olbnwvj.json"
-    )
+    st.header("Enter Biomarkers!")
+    # lottie_hello = la.load_lottie_url(
+    #     "https://assets10.lottiefiles.com/packages/lf20_8olbnwvj.json"
+    # )
 
-    st_lottie(
-        lottie_hello,
-        speed=1,
-        reverse=False,
-        loop=True,
-        quality="high",
-        height=None,
-        width=None,
-        key=None,
-    )
+    # st_lottie(
+    #     lottie_hello,
+    #     speed=1,
+    #     reverse=False,
+    #     loop=True,
+    #     quality="high",
+    #     height=None,
+    #     width=None,
+    #     key=None,
+    # )

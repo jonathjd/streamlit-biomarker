@@ -16,32 +16,7 @@ def convert_df(df):
     return df.to_csv().encode("utf-8")
 
 
-def add_logo():
-    st.markdown(
-        """
-        <style>
-            [data-testid="stSidebarNav"] {
-                background-image: url(https://github.com/jonathjd/streamlit-biomarker/blob/main/images/SomalogicLogo.png?raw=true);
-                background-repeat: no-repeat;
-                padding-top: 120px;
-                background-position: 20px 20px;
-            }
-            [data-testid="stSidebarNav"]::before {
-                content: "My Company Name";
-                margin-left: 20px;
-                margin-top: 20px;
-                font-size: 30px;
-                position: relative;
-                top: 100px;
-            }
-        </style>
-        """,
-        unsafe_allow_html=True,
-    )
-
-
 with st.sidebar:
-    add_logo()
     st.title("GSDE Pathway Analysis Tool")
     target_markers = st.text_input("Enter List of Biomarkers")
     if target_markers:

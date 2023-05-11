@@ -1,16 +1,13 @@
 import streamlit as st
-
-# from streamlit_lottie import st_lottie
 import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib_venn as vplt
-import modules.lottie_animation as la
 
 st.set_page_config(
     page_title="Pathway Analysis", layout="centered", initial_sidebar_state="expanded"
 )
 
-with open("./static/style.css") as f:
+with open("./static/images/style.css") as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 

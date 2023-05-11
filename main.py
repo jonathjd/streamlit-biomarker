@@ -21,7 +21,7 @@ def add_logo():
         """
         <style>
             [data-testid="stSidebarNav"] {
-                background-image: url(https://github.com/jonathjd/streamlit-biomarker/blob/main/static/images/SomalogicLogo.png/200/200);
+                background-image: url(https://github.com/jonathjd/streamlit-biomarker/blob/main/images/SomalogicLogo.png?raw=true);
                 background-repeat: no-repeat;
                 padding-top: 120px;
                 background-position: 20px 20px;

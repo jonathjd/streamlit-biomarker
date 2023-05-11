@@ -80,17 +80,3 @@ if target_markers:
 
 else:
     st.header("Enter Biomarkers!")
-    # lottie_hello = la.load_lottie_url(
-    #     "https://assets10.lottiefiles.com/packages/lf20_8olbnwvj.json"
-    # )
-
-    # st_lottie(
-    #     lottie_hello,
-    #     speed=1,
-    #     reverse=False,
-    #     loop=True,
-    #     quality="high",
-    #     height=None,
-    #     width=None,
-    #     key=None,
-    # )

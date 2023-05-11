@@ -7,7 +7,7 @@ st.set_page_config(
     page_title="Pathway Analysis", layout="centered", initial_sidebar_state="expanded"
 )
 
-with open("./static/images/style.css") as f:
+with open("./static/style.css") as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 

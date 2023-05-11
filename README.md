@@ -1,18 +1,78 @@
 # Pathway Analysis Tool
 
-Streamlit-Biomarker is an web application used to find the overlab between gene ontology disease associated biomarkers and the SomaScan 7k panel. The application will take in a list of the biomarkers of interest and find the overlap between the SomaScan assay and provide a table as well as some visualizations regarding the results
+## Overview
 
-Link to application: https://biomarker-somalogic.streamlit.app/
-![Screen Shot 2023-02-01 at 9 13 31 PM](https://user-images.githubusercontent.com/66283742/216237471-ed521b04-6366-49e8-850f-29edbeaadc9f.png)
+This web application is designed to find overlapping proteins on the somascan menu based on a list of UniProt IDs. It takes in a list of UniProt IDs in a specific format and returns the proteins that overlap with the somascan menu. The application is implemented using Streamlit, a popular Python library for building interactive web applications.
 
-# How it's Made:
-**Tech Used:** Python (Streamlit), Some injected HTML and CSS (lol)
+## Usage
 
-![alt-text](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![alt-text](https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white)
-![alt-text](https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white)
+### Prerequisites
 
-A very common question that customers want to know is what the overlap is between the SomaScan 7k discovery panel and their disease of interest (e.g. inflammation). Finding the overlap between these two subsets of proteins can be an ardous process. This web application was made to expedite that process and provide insight along the way.
+- Python 3.7 or above
+- pip package manager
 
-Streamlit was for the front end for rapid development time and ease of use. An excel file is used to store the SomaScan assay list, however this list is/will be updated with more analytes. In the future a database connection will need to be made to avoid updating this static file.
+### Installation
 
+1. Clone the repository from GitHub:
+
+```
+git clone https://github.com/jonathjd/streamlit-biomarker.git
+```
+
+2. Navigate to the project directory:
+
+```
+cd streamlit-biomarker
+```
+
+3. Install the required dependencies:
+
+```
+pip install -r requirements.txt
+```
+
+### Running the Application
+
+1. Once the dependencies are installed, start the web application by running the following command:
+
+```
+streamlit run main.py
+```
+
+2. The application will start running and display a URL in the console, which you can open in your web browser.
+
+3. Access the application by clicking on the provided link or by navigating to `http://localhost:8501` in your web browser.
+
+4. The web application interface will be displayed, ready for you to use.
+
+### Using the Application
+
+1. Input the list of UniProt IDs in the specified format:
+
+```
+UniProtKB:P0CJ72    Humanin-like 5
+UniProtKB:Q6UX68    XK-related protein 5
+UniProtKB:Q6UX65    DNA damage-regulated autophagy modulator protein 2
+UniProtKB:P36897    TGF-beta receptor type-1
+UniProtKB:P36896    Activin receptor type-1B
+```
+
+2. Click on the "Find Overlapping Proteins" button.
+
+3. The application will process the input and display the proteins that overlap with the somascan menu.
+
+## Additional Information
+
+### Repository
+
+The source code for the application can be found in the following GitHub repository:
+
+[https://github.com/jonathjd/streamlit-biomarker](https://github.com/jonathjd/streamlit-biomarker)
+
+### Issues
+
+If you encounter any issues or have suggestions for improvement, please create a new issue in the GitHub repository's issue tracker.
+
+### Credits
+
+This application was developed by [jonathjd](https://github.com/jonathjd).
